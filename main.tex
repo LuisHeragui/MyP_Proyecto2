@@ -1,0 +1,60 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\textheight = 21cm % largo texto impreso 
+\textwidth = 18cm % ancho texto impreso 
+\topmargin = -2cm % margen superior 3-2=1cm 
+\oddsidemargin = -1cm % margen izquierdo 4.5-2=2.5cm % Sangría=0mm 
+\parindent = 0mm 
+\usepackage{amsthm,amsmath,amssymb,amsfonts,xcolor, latexsym} \usepackage[T1]{fontenc} % fuentes adecuadas para salida 
+\usepackage[utf8]{inputenc} 
+\usepackage[shortlabels]{enumitem} 
+\usepackage{tikz} 
+\usepackage{xcolor} 
+\usepackage{amsmath}
+\title{Modelado y Pogramación\\ Proyecto 2}
+
+\date{28 de octubre de 2019}
+
+\begin{document}
+
+\maketitle
+
+Integrantes:\\
+- Cruz Miranda Camila Alexandra, 316084707\\
+- Hernández Aguilar Luis Alberto, 314208682\\
+
+Compilamos la práctica y generamos un archivo .jar con:\\
+ ant proyecto2.jar\\
+
+Ejecutamos con:\\
+java -jar proyecto2.jar
+
+\section{Problemática a resolver}
+Crearemos una aplicación web de varios tests de diferentes temas. Es una base de datos llena de base de datos, cada una representa un test que se resolverá de manera opcional. Se diferencian por la categoría de conocimiento que abarcan. Para resolver un test y guardar tu puntaje debes ser un usuario de la aplicación. La aplicación web también tendrá una base de datos de los usuarios registrados a la misma. \\
+
+Tendremos 4 opciones:
+
+\begin{itemize}
+    \item Cultura
+    \item Música
+    \item Cine
+    \item Deporte
+\end{itemize}
+Cada uno de estos temas tiene su propia base de datos. Y la aplicación web cumple estas condiciones:
+
+\begin{enumerate}
+    \item \textbf{(Singleton)} No puedes llenar más de un test al mismo tiempo.
+    \item \textbf{(State)} Un usuario puede guardar el estado de su test sin terminar para regresar a llenarlo después. EN el inicio se le dará la opción de empezar un test nuevo o continuar el que dejó guardado).
+    \item \textbf{(State)} Al terminar un test se le dará al usuario su resultado en el mismo y podrá elegir entre terminar el programa, volver a empezar el mismo test o elegir otro para comenzar a resolverlo.
+    \item \textbf{(State)} El usuario puede elegir finalizar el test a pesar de no haberlo completado, en dado caso no se le dará un resultado, perderá sus puntos y regresará al inicio del programa.
+    \item \textbf{(State e Iterator)} Para poder realizar algún test de la aplicación web, el cliente debe iniciar sesión en la aplicación. Por lo tanto, si el cliente no tiene un usuario y contraseña, debe registrarse para crear su cuenta.
+    \item \textbf{(Decorator)} Las puntuaciones de cada test se guardarán por usuario en su variable puntaje y dependiendo de qué tan alta sea su puntación se le dará una insignia al usuario.\\
+    El usuario también puede elegir borrar todos sus puntos y así reiniciar sus insignias.
+    \item \textbf{(Iterator)} Al iniciar sesión se debe recorrer la estructura de datos donde estén guardados los usuarios junto con sus contraseñas. De igual manera se deben recorrer las preguntas del test especificado así como las respuestas falsas de cada pregunta elegida aleatoriamente de una lista.
+\end{enumerate}
+
+\textbf{README:} Anotaciones\\
+- En las imágenes adjuntas señalamos con recuadros de color las clases involucradas con sus respectivos patrones.
+
+
+\end{document}
