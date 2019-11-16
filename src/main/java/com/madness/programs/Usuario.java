@@ -1,3 +1,5 @@
+package com.madness.programs;
+
 public class Usuario {
 
     private String nombre;
